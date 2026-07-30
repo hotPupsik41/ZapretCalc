@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center">
+
+        <!-- ЭКРАН КАЛЬКУЛЯТОРА -->
+        <LinearLayout
+            android:id="@+id/screenCalc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/input1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Число 1"
+                android:inputType="number"
+                android:padding="10dp"/>
+
+            <EditText
+                android:id="@+id/input2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Число 2"
+                android:inputType="number"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Результат"
+                android:textSize="24sp"
+                android:layout_marginTop="30dp"/>
+
+            <Button
+                android:id="@+id/btnSum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сложить"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnUmn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Умножить"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnDel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Разделить"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вычитать"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnRkn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="роскомнадзорный калькулятор!"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="очистить"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Информация"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnOnlyAdmin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADM1337"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnReq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Новости"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+                android:id="@+id/btnNextScreenSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Настройки"
+                android:layout_marginTop="20dp"/>
+
+        </LinearLayout>
+
+        <!-- ЭКРАН НАСТРОЕК -->
+        <LinearLayout
+            android:id="@+id/screenSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/settingsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="в процессе?"
+                android:textSize="24sp"
+                android:layout_marginTop="30dp"/>
+
+             <EditText
+                android:id="@+id/cmd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="введи команду"
+                android:inputType="text"
+                android:padding="10dp"/>
+            
+            <EditText
+                android:id="@+id/cmdTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="введи команду"
+                android:inputType="text"
+                android:padding="10dp"/>
+            
+            <Button
+                android:id="@+id/btnCmd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ввести команду"
+                android:layout_marginTop="20dp"/>
+            
+            <Button
+                android:id="@+id/btnExitFromSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Назад"
+                android:layout_marginTop="20dp"/>
+            
+            
+            
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
