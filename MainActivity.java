@@ -24,7 +24,6 @@ import android.content.ClipboardManager;
 import android.content.ClipData;
 import android.widget.LinearLayout;
 
-
 public class MainActivity extends Activity {
 
   LinearLayout screenCalc;
@@ -41,12 +40,14 @@ public class MainActivity extends Activity {
   double chance = 0.20;
   double randomForRkn = rand.nextDouble();
   boolean offToasts = false;
-  private static final String version = "🚽 1.8 test build";
-  private static final String news = "💩 теперь калькулятор вообще не умеет считать,чтобы научиться считать ты должен написать команду в консоли.Было принято умное решение что теперь калькулятор должен иметь баги";
+  private static final String version = "🔥 1.9 test build";
+  private static final String news = "✅ добавлена ссылка на GitHub (весь исходный код на нем)\n✅ исправлены баги (наверное)";
   int idPlayer = rand.nextInt(); // ни на что пока не влияет
   boolean isNormalCalc = false;
   boolean isRoot = false;
   boolean isSoonRootUser = false;
+  boolean flag = false;
+  int count = 0;
 
   String vpnOOO; // On or Off
   // TODO: доделать брат, обязательно
@@ -169,38 +170,25 @@ public class MainActivity extends Activity {
       } else if (a.equals("/fsb") && b.equals("check")) {
         helloToast("на самом деле я собираюсь добавить ФСБ помимо РКН.Скоро...", 0);
       } else if (a.equals("/help")) {
-        String help = "1 поле: /admin 2 поле: check — проверка на админа" +
-          "1 поле: /fsb 2 поле: check — проверка на ФСБ" +
-          "1 поле: /calc 2 поле: normal — включить нормальный вычислительный калькулятор" +
-          "1 поле: /calc 2 поле: just — выключить нормальный калькулятор" +
-          "1 поле: /say 2 поле: любое слово — сказать любое слово (тост)";
-          
-          if (isRoot) {
-            help += "/addServer (GET req)" +
-              "/admin : get_t" +
-              "/admin : get_f" +
-              "/id : check";
-          }
-          
-          helloToast(help, 1);
-          
-      } else if (isAdmin && a.equals("/root") && b.equals("io.read(root)")) {
-        isSoonRootUser = true;
-        a = "";
-        b = "";
-        helloToast("alright! please enter /root and password", 1);
-        if (isSoonRootUser && a.equals("/root") && b.startsWith("!!&") && b.equals("404050506060")) {
-          isRoot = true;
-          helloToast("alr.You get root status", 1);
-        } else {
-          a = "";
-          b = "";
-          isSoonRootUser = false;
-          helloToast("failed", 1);
+        String help = "1 поле: /admin 2 поле: check — проверка на админа"
+            + "1 поле: /fsb 2 поле: check — проверка на ФСБ"
+            + "1 поле: /calc 2 поле: normal — включить нормальный вычислительный калькулятор"
+            + "1 поле: /calc 2 поле: just — выключить нормальный калькулятор"
+            + "1 поле: /say 2 поле: любое слово — сказать любое слово (тост)";
+
+        if (isRoot) {
+          help += "/addServer (GET req)" + "/admin : get_t" + "/admin : get_f" + "/id : check";
         }
+
+        helloToast(help, 1);
+
+      } else if (isAdmin && a.equals("/root") && b.equals("/rooted")) {
+        isSoonRootUser = true;
+        helloToast("ты знаешь куда жать", 1);
       } else {
-        helloToast("такой команды не существует", 0);
+        helloToast("такой команды не существует", 1);
       }
+
     });
 
     new AlertDialog.Builder(this).setTitle("Что нового").setMessage(version + "\n" + news)
@@ -392,6 +380,27 @@ public class MainActivity extends Activity {
           "Запретный калькулятор!\nВнимание всем,этот калькулятор является экстремистским,поэтому он должен быть заблокирован\nВерсия экстремистского приложения: "
               + version + "\nСоздатель: hot pupsik (ник главного уебка)")
           .setPositiveButton("Ясно", (d, w) -> {
+          })
+          .setNegativeButton("Жми!", (d, w) -> {
+            if (isSoonRootUser) {
+              if (count <= 5) {
+                count++;
+                helloToast("тап тап: " + count, 1);
+              } else if (count == 5) {
+                isRoot = true;
+                helloToast("ты имеешь рут права", 1);
+              } else {
+                helloToast("???", 1);
+              }
+              
+              if (count > 5) {
+                helloToast("ты уже имеешь рут права", 1);
+                return;
+              }
+              
+            } else {
+              helloToast("что ты здесь ожидал увидеть?", 1);
+            }
           }).show();
     });
 
