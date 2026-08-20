@@ -14,3 +14,7 @@
 
 ## разработчик
 hotPupsik42
+
+## соц.сети
+канал: https://t.me/PupsikDev
+мой телеграм: https://t.me/HotPupsik
